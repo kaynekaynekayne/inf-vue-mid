@@ -28,7 +28,7 @@
     methods: {
       //실질적인 데이터처리는 전부 App.vue에서 함
       addOneItem(todoItem) {
-        var obj={completed: false, item:todoItem};
+        const obj={completed: false, item:todoItem};
         localStorage.setItem(todoItem, JSON.stringify(obj));
         this.todoItems.push(obj);
       },
@@ -53,7 +53,7 @@
     created: function() {
         //인스턴스가 생성되는 시점에 로직 호출
         if (localStorage.length > 0) {
-            for (var i=0; i<localStorage.length; i++) {
+            for (let i=0; i<localStorage.length; i++) {
                 if (localStorage.key(i) !== 'loglevel:webpack-dev-server') {
                     // console.log(JSON.parse(localStorage.getItem(localStorage.key(i))));
                     this.todoItems.push(JSON.parse(localStorage.getItem(localStorage.key(i))))

@@ -8,12 +8,10 @@
         <AlertModal v-if="showModal" @close="showModal = false">
             <h3 slot="header">
                 경고!
+                <i class="closeModalBtn fas fa-times" @click="showModal=false"></i>
             </h3>
             <div slot="body">
-                입력하세요
-            </div>
-            <div slot="footer">
-                copy right
+                아무것도 입력하지 않았습니다
             </div>
         </AlertModal>
     </div>
@@ -30,7 +28,7 @@
             }
         },
         methods: {
-            addTodo: function() {
+            addTodo() {
                 if(this.newTodoItem !== ""){
                     this.$emit('addTodoItem', this.newTodoItem)
                     this.clearInput();
@@ -38,7 +36,7 @@
                     this.showModal=!this.showModal
                 }
             },
-            clearInput: function() {
+            clearInput() {
                 this.newTodoItem=""
             }
         },
@@ -74,5 +72,8 @@
     .addBtn {
         color: white;
         vertical-align: middle;
+    }
+    .closeModalBtn{
+        color:#42b983;
     }
 </style>

@@ -15,12 +15,12 @@
                     </div>
             
                     <!--모달 푸터-->
-                    <div class="modal-footer">
+                    <!-- <div class="modal-footer">
                         <slot name="footer">
                             default footer
                             <button class="modal-default-button" @click="$emit('close')">OK</button>
                         </slot>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>

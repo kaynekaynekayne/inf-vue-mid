@@ -1,6 +1,6 @@
 <template>
     <div>
-        <ul>
+        <transition-group name="list" tag="ul">
             <li v-for="(todoItem,i) in propsdata" :key="i" class="shadow">
                 <i class="checkBtn fas fa-check" 
                     :class="{checkBtnCompleted: todoItem.completed}"
@@ -10,7 +10,7 @@
                     <i class="fas fa-trash-alt"></i>
                 </span>
             </li>
-        </ul>
+        </transition-group>
     </div>
 </template>
 
@@ -63,5 +63,15 @@
         margin-left: auto;
         color: #de4343;
         cursor:pointer;
+    }
+
+    .list-enter-active,
+    .list-leave-active {
+        transition: all 1s;
+    }
+    .list-enter,
+    .list-leave-to {
+        opacity: 0;
+        transform: translateY(30px);
     }
 </style>
